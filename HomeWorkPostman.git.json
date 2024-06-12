@@ -1,0 +1,357 @@
+{
+	"info": {
+		"_postman_id": "ac85bcab-1f0c-42de-b9dd-773df18e0a48",
+		"name": "HomeWorkEasy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35375759",
+		"_collection_link": "https://www.postman.com/telecoms-engineer-67033043/workspace/homework/collection/35375759-ac85bcab-1f0c-42de-b9dd-773df18e0a48?action=share&source=collection_link&creator=35375759"
+	},
+	"item": [
+		{
+			"name": "Авторизация",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "Exploratory1@1.1",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Exploratory1@1.1",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://radio-shop.megaplan.by/api/v3/auth/access_token",
+					"protocol": "https",
+					"host": [
+						"radio-shop",
+						"megaplan",
+						"by"
+					],
+					"path": [
+						"api",
+						"v3",
+						"auth",
+						"access_token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание товара",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ODRjNzEyMGY4ODZhMjdhYmMwMGM4ZTEyZGY3MWIxZDk5YzQ1OTRlZDVkYzdiNjk3ZWE1NjM1ODZhN2FiMTllMQ"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"contentType\": \"Offer\",\r\n\t\"tax\": {\r\n\t\t\"id\": \"2\",\r\n\t\t\"contentType\": \"Tax\"\r\n\t},\r\n\t\"type\": \"product\",\r\n\t\"attaches\": [],\r\n\t\"price\": {\r\n\t\t\"contentType\": \"Money\",\r\n\t\t\"value\": 100,\r\n\t\t\"rate\": 3.1862,\r\n\t\t\"valueInMain\": 318.64,\r\n\t\t\"currency\": \"USD\"\r\n\t},\r\n\t\"name\": \"Товар обыкновенный \",\r\n\t\"unit\": {\r\n\t\t\"id\": \"12\",\r\n\t\t\"contentType\": \"Unit\"\r\n\t},\r\n\t\"article\": \"АРТ1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://radio-shop.megaplan.by/api/v3/offer",
+					"protocol": "https",
+					"host": [
+						"radio-shop",
+						"megaplan",
+						"by"
+					],
+					"path": [
+						"api",
+						"v3",
+						"offer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Проверка",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ODRjNzEyMGY4ODZhMjdhYmMwMGM4ZTEyZGY3MWIxZDk5YzQ1OTRlZDVkYzdiNjk3ZWE1NjM1ODZhN2FiMTllMQ"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"contentType\": \"Offer\",\r\n\t\"tax\": {\r\n\t\t\"id\": \"2\",\r\n\t\t\"contentType\": \"Tax\"\r\n\t},\r\n\t\"type\": \"product\",\r\n\t\"attaches\": [],\r\n\t\"price\": {\r\n\t\t\"contentType\": \"Money\",\r\n\t\t\"value\": 100,\r\n\t\t\"rate\": 3.1862,\r\n\t\t\"valueInMain\": 318.64,\r\n\t\t\"currency\": \"USD\"\r\n\t},\r\n\t\"name\": \"Товар обыкновенный \",\r\n\t\"unit\": {\r\n\t\t\"id\": \"12\",\r\n\t\t\"contentType\": \"Unit\"\r\n\t},\r\n\t\"article\": \"АРТ1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://radio-shop.megaplan.by/offers/3721",
+					"protocol": "https",
+					"host": [
+						"radio-shop",
+						"megaplan",
+						"by"
+					],
+					"path": [
+						"offers",
+						"3721"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Редактирование",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ODRjNzEyMGY4ODZhMjdhYmMwMGM4ZTEyZGY3MWIxZDk5YzQ1OTRlZDVkYzdiNjk3ZWE1NjM1ODZhN2FiMTllMQ"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"contentType\": \"Offer\",\r\n\t\"tax\": {\r\n\t\t\"id\": \"2\",\r\n\t\t\"contentType\": \"Tax\"\r\n\t},\r\n\t\"type\": \"product\",\r\n\t\"attaches\": [],\r\n\t\"price\": {\r\n\t\t\"contentType\": \"Money\",\r\n\t\t\"value\": 1000,\r\n\t\t\"rate\": 3.1862,\r\n\t\t\"valueInMain\": 318.64,\r\n\t\t\"currency\": \"USD\"\r\n\t},\r\n\t\"name\": \"Товар необыкновенный \",\r\n\t\"unit\": {\r\n\t\t\"id\": \"12\",\r\n\t\t\"contentType\": \"Unit\"\r\n\t},\r\n\t\"article\": \"АРТ1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://radio-shop.megaplan.by/api/v3/offer/3711",
+					"protocol": "https",
+					"host": [
+						"radio-shop",
+						"megaplan",
+						"by"
+					],
+					"path": [
+						"api",
+						"v3",
+						"offer",
+						"3711"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ODRjNzEyMGY4ODZhMjdhYmMwMGM4ZTEyZGY3MWIxZDk5YzQ1OTRlZDVkYzdiNjk3ZWE1NjM1ODZhN2FiMTllMQ"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"contentType\": \"Offer\",\r\n\t\"tax\": {\r\n\t\t\"id\": \"2\",\r\n\t\t\"contentType\": \"Tax\"\r\n\t},\r\n\t\"type\": \"product\",\r\n\t\"attaches\": [],\r\n\t\"price\": {\r\n\t\t\"contentType\": \"Money\",\r\n\t\t\"value\": 1000,\r\n\t\t\"rate\": 3.1862,\r\n\t\t\"valueInMain\": 318.64,\r\n\t\t\"currency\": \"USD\"\r\n\t},\r\n\t\"name\": \"Товар необыкновенный \",\r\n\t\"unit\": {\r\n\t\t\"id\": \"12\",\r\n\t\t\"contentType\": \"Unit\"\r\n\t},\r\n\t\"article\": \"АРТ1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://radio-shop.megaplan.by/api/v3/offer/3711",
+					"protocol": "https",
+					"host": [
+						"radio-shop",
+						"megaplan",
+						"by"
+					],
+					"path": [
+						"api",
+						"v3",
+						"offer",
+						"3711"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Проверка удаленного GET",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ODRjNzEyMGY4ODZhMjdhYmMwMGM4ZTEyZGY3MWIxZDk5YzQ1OTRlZDVkYzdiNjk3ZWE1NjM1ODZhN2FiMTllMQ"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"contentType\": \"Offer\",\r\n\t\"tax\": {\r\n\t\t\"id\": \"2\",\r\n\t\t\"contentType\": \"Tax\"\r\n\t},\r\n\t\"type\": \"product\",\r\n\t\"attaches\": [],\r\n\t\"price\": {\r\n\t\t\"contentType\": \"Money\",\r\n\t\t\"value\": 1000,\r\n\t\t\"rate\": 3.1862,\r\n\t\t\"valueInMain\": 318.64,\r\n\t\t\"currency\": \"USD\"\r\n\t},\r\n\t\"name\": \"Товар необыкновенный \",\r\n\t\"unit\": {\r\n\t\t\"id\": \"12\",\r\n\t\t\"contentType\": \"Unit\"\r\n\t},\r\n\t\"article\": \"АРТ1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://radio-shop.megaplan.by/api/v3/offer/3711",
+					"protocol": "https",
+					"host": [
+						"radio-shop",
+						"megaplan",
+						"by"
+					],
+					"path": [
+						"api",
+						"v3",
+						"offer",
+						"3711"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "inherit"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "NjZiNzg0YzhlNjBkOTc5MzA2NDNlYzU1ZDc0ODRkYzI3MThmZjU0MGVhYjdjYTExOTAzZGJkZjhlYjU5MWQ1YQ",
+			"type": "string"
+		},
+		{
+			"key": "contractorID",
+			"value": "1273361",
+			"type": "string"
+		}
+	]
+}
